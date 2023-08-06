@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Picksaw" load_steps=2 format=3 uid="uid://lf7jtk68bd5n"]
+
+[ext_resource type="Script" path="res://Items/tools/picksaw.gd" id="1_n0k6c"]
+
+[resource]
+script = ExtResource("1_n0k6c")
+level = 1
+speed = 50
+single_use = false
+name = ""
+category = 0

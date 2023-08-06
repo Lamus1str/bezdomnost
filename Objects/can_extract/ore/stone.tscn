@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bluf8xjhy1jjd"]
+
+[ext_resource type="Script" path="res://Objects/Block.gd" id="1_hng5f"]
+[ext_resource type="Texture2D" uid="uid://yabd3y2df7sx" path="res://Objects/can_extract/ore/stone.png" id="2_1o8yc"]
+[ext_resource type="Script" path="res://Items/item.gd" id="3_qylj4"]
+
+[sub_resource type="Resource" id="Resource_1p480"]
+script = ExtResource("3_qylj4")
+name = "stone"
+icon = ExtResource("2_1o8yc")
+category = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0w3t"]
+atlas = ExtResource("2_1o8yc")
+region = Rect2(17.862, 12.7285, 10.5402, 8.10783)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_covxv"]
+radius = 22.0907
+
+[node name="stone" type="Area2D"]
+script = ExtResource("1_hng5f")
+drop_items = [SubResource("Resource_1p480")]
+endurance = 50.0
+
+[node name="Stone" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(4.2, 4.09375)
+texture = SubResource("AtlasTexture_a0w3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -8)
+shape = SubResource("CircleShape2D_covxv")

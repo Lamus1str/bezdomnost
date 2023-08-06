@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://l81bkb4erhrp"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_6t5qi"]
+
+[sub_resource type="Gradient" id="Gradient_c7jlf"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t4nhb"]
+frequency = 0.0001
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gyxjt"]
+width = 32
+height = 32
+color_ramp = SubResource("Gradient_c7jlf")
+noise = SubResource("FastNoiseLite_t4nhb")
+
+[resource]
+script = ExtResource("1_6t5qi")
+name = "REd square"
+icon = SubResource("NoiseTexture2D_gyxjt")
+category = 0

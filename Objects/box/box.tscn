@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://debtrgp33qegr"]
+
+[ext_resource type="Script" path="res://Objects/box.gd" id="1_keig4"]
+[ext_resource type="Texture2D" uid="uid://bq6wy24jhaej0" path="res://Objects/can_extract/wood.png" id="2_o574i"]
+[ext_resource type="Script" path="res://Items/item.gd" id="3_pwc6q"]
+[ext_resource type="Texture2D" uid="uid://dklg7q0exkuyc" path="res://Player/box.png" id="4_bx7v6"]
+
+[sub_resource type="Resource" id="Resource_kql0n"]
+script = ExtResource("3_pwc6q")
+name = "wood"
+icon = ExtResource("2_o574i")
+category = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4y1x"]
+size = Vector2(60, 60)
+
+[node name="box" type="Area2D"]
+script = ExtResource("1_keig4")
+drop_items = [SubResource("Resource_kql0n")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v4y1x")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_v4y1x")
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(0.750003, -14.5)
+scale = Vector2(1.29464, 1.51563)
+texture = ExtResource("4_bx7v6")

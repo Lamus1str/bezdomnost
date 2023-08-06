@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqwf8j2hv8rem"]
+
+[ext_resource type="Script" path="res://Objects/Block.gd" id="1_7fvpd"]
+[ext_resource type="Texture2D" uid="uid://bq6wy24jhaej0" path="res://Objects/can_extract/wood.png" id="2_n6gk0"]
+[ext_resource type="Texture2D" uid="uid://kli40xf6em3v" path="res://Objects/can_extract/tree/tree.png" id="2_nj7lp"]
+[ext_resource type="Script" path="res://Items/item.gd" id="3_cej6y"]
+
+[sub_resource type="Resource" id="Resource_nggug"]
+script = ExtResource("3_cej6y")
+name = "wood"
+icon = ExtResource("2_n6gk0")
+category = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmlfj"]
+radius = 7.0
+
+[node name="tree" type="Area2D"]
+script = ExtResource("1_7fvpd")
+drop_items = [SubResource("Resource_nggug")]
+endurance = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_tmlfj")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(5, -71)
+scale = Vector2(1.46429, 1.48214)
+texture = ExtResource("2_nj7lp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_tmlfj")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cil301typgvqe"]
+
+[ext_resource type="Script" path="res://Items/item.gd" id="1_qwcbc"]
+
+[resource]
+script = ExtResource("1_qwcbc")
+name = "stone"
+category = 0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4u5u11rhapjc"]
+
+[ext_resource type="Script" path="res://Objects/Block.gd" id="1_ihddw"]
+[ext_resource type="Resource" uid="uid://b52ifnbdsxqyc" path="res://Items/walls/tree_wall.tres" id="2_qs3bt"]
+[ext_resource type="Texture2D" uid="uid://dkpsb3jeb5s7x" path="res://Objects/walls/stone_wall.png" id="3_o5evt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xyysg"]
+radius = 32.9848
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwsrr"]
+radius = 34.2345
+
+[node name="stone_wall" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ihddw")
+drop_items = [ExtResource("2_qs3bt")]
+endurance = 50.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_xyysg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vwsrr")
+
+[node name="StoneWall" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, -44.25)
+scale = Vector2(2.525, 2.57031)
+texture = ExtResource("3_o5evt")

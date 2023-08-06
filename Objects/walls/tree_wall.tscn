@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://78u7cxynhax8"]
+
+[ext_resource type="Script" path="res://Objects/Block.gd" id="1_v0rdj"]
+[ext_resource type="Resource" uid="uid://b52ifnbdsxqyc" path="res://Items/walls/tree_wall.tres" id="2_55aom"]
+[ext_resource type="Texture2D" uid="uid://o6sgmctjh6w1" path="res://Objects/walls/wooden_wall.png" id="3_0c0hg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xyysg"]
+radius = 32.9848
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwsrr"]
+radius = 34.2345
+
+[node name="tree_wall" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_v0rdj")
+drop_items = [ExtResource("2_55aom")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_xyysg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vwsrr")
+
+[node name="WoodenWall" type="Sprite2D" parent="."]
+position = Vector2(2, -32)
+scale = Vector2(2.275, 2.6875)
+texture = ExtResource("3_0c0hg")

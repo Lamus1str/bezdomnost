@@ -1,0 +1,360 @@
+[gd_scene load_steps=17 format=3 uid="uid://c5q8vboslbiw1"]
+
+[ext_resource type="PackedScene" uid="uid://y8dhhyt0jgx8" path="res://Player/Player.tscn" id="1_lssu3"]
+[ext_resource type="Script" path="res://World.gd" id="1_qfifu"]
+[ext_resource type="PackedScene" uid="uid://dqciofjckxvg5" path="res://ineraction_object/item/item_object.tscn" id="1_vouf2"]
+[ext_resource type="Texture2D" uid="uid://2l85r6uvq5oa" path="res://icon.svg" id="2_or77e"]
+[ext_resource type="Script" path="res://ItemList.gd" id="3_kt2gs"]
+[ext_resource type="Resource" uid="uid://b52ifnbdsxqyc" path="res://Items/walls/tree_wall.tres" id="4_ypb1f"]
+[ext_resource type="Script" path="res://Inventory.gd" id="5_otcnu"]
+[ext_resource type="PackedScene" uid="uid://dqwf8j2hv8rem" path="res://Objects/can_extract/tree/tree.tscn" id="6_2tqki"]
+[ext_resource type="PackedScene" uid="uid://debtrgp33qegr" path="res://Objects/box/box.tscn" id="7_cuhmf"]
+[ext_resource type="PackedScene" uid="uid://c4u5u11rhapjc" path="res://Objects/walls/stone_wall.tscn" id="7_hvyjt"]
+[ext_resource type="Script" path="res://Crafts.gd" id="7_kqim2"]
+[ext_resource type="Script" path="res://Components.gd" id="8_qdl8i"]
+[ext_resource type="Script" path="res://random_generator_tree.gd" id="12_35l48"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fv6fd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_13nv8"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_fv6fd")
+
+[sub_resource type="LabelSettings" id="LabelSettings_w3wu6"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+offset_left = -3441.0
+offset_top = -2566.0
+offset_right = 3994.0
+offset_bottom = 3726.0
+color = Color(0.72549, 0.890196, 0.721569, 1)
+metadata/_edit_lock_ = true
+
+[node name="World" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("1_qfifu")
+
+[node name="Player" parent="World" instance=ExtResource("1_lssu3")]
+position = Vector2(475, 295)
+
+[node name="ColorRect" type="ColorRect" parent="World"]
+offset_left = 88.0
+offset_top = 54.0
+offset_right = 132.0
+offset_bottom = 105.0
+color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[node name="item_object" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(440.876, 152.926)
+builded_or_assigned = true
+
+[node name="item_object2" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(724, 150)
+builded_or_assigned = true
+
+[node name="item_object3" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(639, 288)
+loaded_item = ExtResource("4_ypb1f")
+builded_or_assigned = true
+
+[node name="item_object4" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(544, 92)
+builded_or_assigned = true
+
+[node name="item_object5" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(700, 346)
+builded_or_assigned = true
+
+[node name="item_object6" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(537, 360)
+builded_or_assigned = true
+
+[node name="item_object7" parent="World" instance=ExtResource("1_vouf2")]
+position = Vector2(537, 360)
+builded_or_assigned = true
+
+[node name="box" parent="World" instance=ExtResource("7_cuhmf")]
+position = Vector2(545, 263)
+builded_or_assigned = true
+
+[node name="tree" parent="World" instance=ExtResource("6_2tqki")]
+position = Vector2(-75, 150)
+
+[node name="trddee5" parent="World" instance=ExtResource("6_2tqki")]
+position = Vector2(-270, 243)
+drop_items = []
+
+[node name="stone_wall" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(677, 204)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall2" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(689, 242)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall3" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(688, 287)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall4" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(681, 344)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall5" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(654, 172)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall6" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(602, 158)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall7" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(551, 158)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall8" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(500, 158)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall9" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(451, 173)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall10" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(408, 200)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall11" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(377, 232)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall12" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(369, 271)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall13" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(359, 312)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall14" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(355, 351)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall15" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(371, 371)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall16" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(394, 396)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall17" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(424, 409)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall18" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(473, 429)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall19" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(513, 437)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="stone_wall20" parent="World" instance=ExtResource("7_hvyjt")]
+position = Vector2(654, 372)
+builded_or_assigned = true
+endurance = 20.0
+
+[node name="HUB" type="CanvasLayer" parent="."]
+
+[node name="Inventory" type="Control" parent="HUB"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_otcnu")
+
+[node name="Button" type="Button" parent="HUB/Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.877604
+anchor_top = 0.723765
+anchor_right = 0.998264
+anchor_bottom = 0.820988
+offset_left = 977.896
+offset_top = 436.049
+offset_right = 1020.07
+offset_bottom = 463.16
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_vertical = 10
+text = "Craft
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HUB/Inventory"]
+layout_mode = 1
+offset_right = 366.0
+offset_bottom = 446.0
+split_offset = 200
+
+[node name="ItemList" type="ItemList" parent="HUB/Inventory/VSplitContainer"]
+layout_mode = 2
+item_count = 2
+max_columns = 4
+same_column_width = true
+icon_scale = 0.25
+item_0/text = "bvccvnbvcbb"
+item_0/icon = ExtResource("2_or77e")
+item_1/text = "cvvcvb"
+item_1/icon = SubResource("NoiseTexture2D_13nv8")
+script = ExtResource("3_kt2gs")
+
+[node name="Label" type="Label" parent="HUB/Inventory/VSplitContainer/ItemList"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 363.0
+grow_vertical = 0
+text = "Inventary"
+
+[node name="ItemBox" type="ItemList" parent="HUB/Inventory/VSplitContainer"]
+layout_mode = 2
+item_count = 2
+max_columns = 4
+same_column_width = true
+icon_scale = 0.25
+item_0/text = "bvccvnbvcbb"
+item_0/icon = ExtResource("2_or77e")
+item_1/text = "cvvcvb"
+item_1/icon = SubResource("NoiseTexture2D_13nv8")
+script = ExtResource("3_kt2gs")
+
+[node name="Label2" type="Label" parent="HUB/Inventory/VSplitContainer/ItemBox"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -26.0
+offset_right = 363.0
+grow_vertical = 0
+text = "box"
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="HUB/Inventory"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 742.0
+offset_right = 1112.0
+offset_bottom = 456.0
+grow_horizontal = 0
+split_offset = 300
+
+[node name="Crafts" type="ItemList" parent="HUB/Inventory/VSplitContainer2"]
+layout_mode = 2
+script = ExtResource("7_kqim2")
+
+[node name="Label3" type="Label" parent="HUB/Inventory/VSplitContainer2/Crafts"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "crafts
+"
+
+[node name="Components" type="ItemList" parent="HUB/Inventory/VSplitContainer2"]
+layout_mode = 2
+script = ExtResource("8_qdl8i")
+
+[node name="Label4" type="Label" parent="HUB/Inventory/VSplitContainer2/Components"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "components for craft
+"
+
+[node name="Label" type="Label" parent="HUB"]
+offset_left = -1.0
+offset_top = 441.0
+offset_right = 356.0
+offset_bottom = 597.0
+text = "Ходить WASD
+Инвертарь tab
+Открыть ящик E
+Уничтожать зажимать левую кнопку мыши
+Строить правая кнопка мыши
+Перекладывать в ящик F
+"
+label_settings = SubResource("LabelSettings_w3wu6")
+
+[node name="Label2" type="Label" parent="HUB"]
+offset_left = 472.0
+offset_top = 619.0
+offset_right = 1153.0
+offset_bottom = 793.0
+text = "Сделать почти ничего не успел, это мой первый джем, так что только так."
+label_settings = SubResource("LabelSettings_w3wu6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+build_mode = 1
+polygon = PackedVector2Array(-5, 3618, 1335, 3565, 3899, 3565, 3928, -2452, -165, -2486, -3235, -2388, -3246, 3494, -178, 3596, -42, 3800, -3101, 3344, -3101, -2258, 3755, -2201, 3741, 3409)
+
+[node name="random_generator_tree" type="Node" parent="."]
+script = ExtResource("12_35l48")
+
+[connection signal="Update_craft_components" from="World/Player" to="HUB/Inventory/VSplitContainer2/Components" method="_on_player_update_craft_components"]
+[connection signal="Update_craft_list" from="World/Player" to="HUB/Inventory/VSplitContainer2/Crafts" method="_on_player_update_craft_list"]
+[connection signal="Update_items" from="World/Player" to="HUB/Inventory/VSplitContainer/ItemList" method="_on_player_update_items"]
+[connection signal="Update_items_in_box" from="World/Player" to="HUB/Inventory/VSplitContainer/ItemBox" method="_on_player_update_items"]
+[connection signal="pressed" from="HUB/Inventory/Button" to="World/Player" method="_craft_pressed"]
+[connection signal="empty_clicked" from="HUB/Inventory/VSplitContainer/ItemList" to="World/Player" method="_on_item_list_empty_clicked"]
+[connection signal="item_selected" from="HUB/Inventory/VSplitContainer/ItemList" to="World/Player" method="_on_item_list_item_selected"]
+[connection signal="empty_clicked" from="HUB/Inventory/VSplitContainer/ItemBox" to="World/Player" method="_box_empty_clicked"]
+[connection signal="item_selected" from="HUB/Inventory/VSplitContainer/ItemBox" to="World/Player" method="_box_item_selected"]
+[connection signal="item_selected" from="HUB/Inventory/VSplitContainer2/Crafts" to="World/Player" method="_on_crafts_selected"]

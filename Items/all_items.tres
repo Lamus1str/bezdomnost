@@ -1,0 +1,104 @@
+[gd_resource type="Resource" load_steps=26 format=3 uid="uid://dmva51247iweg"]
+
+[ext_resource type="Resource" uid="uid://b52ifnbdsxqyc" path="res://Items/walls/tree_wall.tres" id="1_qfgjb"]
+[ext_resource type="Resource" uid="uid://l81bkb4erhrp" path="res://Items/red_square.tres" id="2_5gb6d"]
+[ext_resource type="Resource" uid="uid://dsmqcxbxbg37p" path="res://Items/resources/tree.tres" id="3_dqarn"]
+[ext_resource type="Texture2D" uid="uid://yabd3y2df7sx" path="res://Objects/can_extract/ore/stone.png" id="4_21h2k"]
+[ext_resource type="Script" path="res://Items/item.gd" id="5_rqkmi"]
+[ext_resource type="Texture2D" uid="uid://d2jy1dxhnwivm" path="res://Objects/can_extract/ore/iron.png" id="6_qnpdr"]
+[ext_resource type="Texture2D" uid="uid://b4s6wt4xyyf4k" path="res://Player/fignya0.png" id="7_k82u8"]
+[ext_resource type="Texture2D" uid="uid://budhtypchdhob" path="res://Player/fignya1.png" id="8_67xlg"]
+[ext_resource type="Texture2D" uid="uid://dtnecci2cdn58" path="res://Player/fignya2.png" id="9_jc03u"]
+[ext_resource type="Texture2D" uid="uid://bvbpktkg0q83f" path="res://Player/stone_picksaw.png" id="10_dgvrf"]
+[ext_resource type="Script" path="res://Items/tools/picksaw.gd" id="11_lpvo5"]
+[ext_resource type="Texture2D" uid="uid://dovtyanyas7e6" path="res://Player/iron_picksaw.png" id="12_d5ehb"]
+[ext_resource type="Script" path="res://Items/builded_item.gd" id="13_cj615"]
+[ext_resource type="Texture2D" uid="uid://dklg7q0exkuyc" path="res://Player/box.png" id="14_0ko16"]
+[ext_resource type="Texture2D" uid="uid://dsepixm5jngmj" path="res://Player/apple.png" id="15_700i1"]
+
+[sub_resource type="Resource" id="Resource_xotkn"]
+script = ExtResource("13_cj615")
+scene_name = "box"
+single_use = true
+name = "box"
+icon = ExtResource("14_0ko16")
+category = 0
+
+[sub_resource type="Resource" id="Resource_pxsxq"]
+script = ExtResource("5_rqkmi")
+name = "fignya"
+icon = ExtResource("9_jc03u")
+category = 0
+
+[sub_resource type="Resource" id="Resource_gjesb"]
+script = ExtResource("5_rqkmi")
+name = "iron"
+icon = ExtResource("6_qnpdr")
+category = 0
+
+[sub_resource type="Resource" id="Resource_xod7g"]
+script = ExtResource("11_lpvo5")
+level = 2
+speed = 209
+single_use = false
+name = ""
+icon = ExtResource("12_d5ehb")
+category = 0
+
+[sub_resource type="Resource" id="Resource_1dtbl"]
+script = ExtResource("5_rqkmi")
+name = "kakaeto fignya"
+icon = ExtResource("7_k82u8")
+category = 0
+
+[sub_resource type="Resource" id="Resource_wpunb"]
+script = ExtResource("5_rqkmi")
+name = "stone"
+icon = ExtResource("4_21h2k")
+category = 0
+
+[sub_resource type="Resource" id="Resource_ext2q"]
+script = ExtResource("11_lpvo5")
+level = 2
+speed = 533
+single_use = false
+name = ""
+icon = ExtResource("10_dgvrf")
+category = 0
+
+[sub_resource type="Resource" id="Resource_7afng"]
+script = ExtResource("13_cj615")
+scene_name = "stone_wall"
+single_use = true
+name = "stone wall"
+icon = ExtResource("4_21h2k")
+category = 0
+
+[sub_resource type="Resource" id="Resource_fk7dl"]
+script = ExtResource("5_rqkmi")
+name = "strannaya fignya"
+icon = ExtResource("8_67xlg")
+category = 0
+
+[sub_resource type="Resource" id="Resource_sqy26"]
+script = ExtResource("5_rqkmi")
+name = "super puper apple"
+icon = ExtResource("15_700i1")
+category = 0
+
+[resource]
+metadata/from_name = {
+"REd square": ExtResource("2_5gb6d"),
+"box": SubResource("Resource_xotkn"),
+"fignya": SubResource("Resource_pxsxq"),
+"iron": SubResource("Resource_gjesb"),
+"iron picksaw": SubResource("Resource_xod7g"),
+"kakaeto fignya": SubResource("Resource_1dtbl"),
+"stone": SubResource("Resource_wpunb"),
+"stone picksaw": SubResource("Resource_ext2q"),
+"stone wall": SubResource("Resource_7afng"),
+"strannaya fignya": SubResource("Resource_fk7dl"),
+"super puper apple": SubResource("Resource_sqy26"),
+"tree_wall": ExtResource("1_qfgjb"),
+"wood": ExtResource("3_dqarn")
+}

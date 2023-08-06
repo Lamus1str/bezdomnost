@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqfdg7w6cloko"]
+
+[ext_resource type="Script" path="res://Objects/Block.gd" id="1_xfd5a"]
+[ext_resource type="Texture2D" uid="uid://d2jy1dxhnwivm" path="res://Objects/can_extract/ore/iron.png" id="2_v5tm5"]
+[ext_resource type="Script" path="res://Items/item.gd" id="3_rrcsm"]
+
+[sub_resource type="Resource" id="Resource_0xd8d"]
+script = ExtResource("3_rrcsm")
+name = "iron"
+icon = ExtResource("2_v5tm5")
+category = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r01o8"]
+radius = 18.1108
+
+[node name="iron" type="Area2D"]
+script = ExtResource("1_xfd5a")
+destroying_level = 1
+drop_items = [SubResource("Resource_0xd8d")]
+endurance = 50.0
+
+[node name="Iron" type="Sprite2D" parent="."]
+position = Vector2(-1, -9)
+scale = Vector2(1.35938, 1.66407)
+texture = ExtResource("2_v5tm5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6)
+shape = SubResource("CircleShape2D_r01o8")

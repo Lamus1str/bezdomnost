@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BuildedItem" load_steps=3 format=3 uid="uid://b52ifnbdsxqyc"]
+
+[ext_resource type="Texture2D" uid="uid://bq6wy24jhaej0" path="res://Objects/can_extract/wood.png" id="1_bnthx"]
+[ext_resource type="Script" path="res://Items/builded_item.gd" id="1_i480h"]
+
+[resource]
+script = ExtResource("1_i480h")
+scene_name = "tree_wall"
+single_use = true
+name = "tree_wall"
+icon = ExtResource("1_bnthx")
+category = 0
